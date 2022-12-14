@@ -14,7 +14,7 @@ public class RegistroTest{
 		
 	@Before
 	public void Before() {
-		registros= new Registro("C:\\Users\\snkk\\Documents\\registros.csv");
+		registros= new Registro();
 	}
 	
 	@Test

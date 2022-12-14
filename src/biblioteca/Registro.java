@@ -1,9 +1,5 @@
 package biblioteca;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -15,34 +11,27 @@ public class Registro {
 	public ArrayList<String[]> busqueda_autor;
 	public ArrayList<String[]> busqueda_isbn;
 	
-	public Registro(String path) {
-
+	public Registro() {		
 		
-		if(path != "") {
-			leer_registros(path);
-		}
+		leer_registros();
 	}
 	
 	
-	private void leer_registros(String path) {
+	private void leer_registros() {
 		
-		String line="";
+		String[] line= {
+			"El Viaje de la Humanidad;Oded Galor;Paidós;9789569987915;376;Sociología Y Antropología;3,5,14,(21,54);disponible;EL ENSAYO MÁS IMPORTANTE DEL AÑO. Un lanzamiento internacional en más de 30 países. Durante mucho tiempo se ha creído que la prosperidad del ser humano había aumentado gradualmente en el transcurso de la historia.;2022/12/14 12:11:58",
+			"La Chica del Tren;Paula Hawkins;Booket;9789569963681;496;Ficción Moderna Y Contemporánea;3,5,14,(21,54);Disponible;27 millones de lectores en todo el mundo ¿Estabas en el tren de las 8.04? ¿Viste algo sospechoso? Rachel, sí Rachel toma siempre el tren de las 8.04 h. Cada mañana lo mismo: el mismo paisaje, las mismas casas…;2022/12/14 12:11:58",
+			"Heartless;Marissa Meyer;V&R Eds;9789877472547;592;Novelas De Amor;3,5,14,(21,54);Disponible;Mucho antes de convertirse en el terror del Pais de las Maravillas, la Reina de Corazones era una chica que tan solo queria enamorarse.;2022/12/14 12:11:58",
+			"Lamentables Datos Animales;Brooke Barker;Dc Comics;9789569994005;216;Niños De 14 Años;3,5,14,(21,54);Prestado;Un encantador y extravagante compendio de las más desafortunadas verdades del reino animal, con más de cincuenta ilustraciones hechas a mano.¿Alguna vez se han preguntado qué piensan las efímeras de que su esperanza de vida quepa en un día?;2022/12/14 12:11:58",
+			"La Teoría de los Archipiélagos;Alice Kellen;Planeta;9789564082615;288;Novelas De Amor;3,5,14,(21,54);Extraviado;La teoría de los archipiélagos viene a decir que todos somos islas, llegamos solos a este mundo y nos vamos exactamente igual, pero necesitamos tener otras islas alrededor para sentirnos felices en medio de ese mar que une tanto como separa.;2022/12/14 12:11:58",
+			"Si el zapato te queda;Julie Murphy;Planeta;9789566159797;384;Novelas De Amor;3,5,14,(21,54);Prestado;Si el zapato no te queda, quizá es hora de diseñar el tuyo. A Cindy le fascinan los zapatos. Un moño bien colocado o un tacón de buena altura son su forma de expresión.;2022/12/14 12:11:58"	
+		};
 		
-		try {
-			BufferedReader br = new BufferedReader(new FileReader(path));
-			
-			while((line = br.readLine()) != null) {
-				String[] libro = line.split(";");
-				registros.add(libro);
-			}
-			br.close();
-			
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
+		for (int i = 0;i<line.length;i++) {
+			String[] libro = line[i].split(";");
+			registros.add(libro);
+		}		
 	}
 	
 	private String fecha_actual() {

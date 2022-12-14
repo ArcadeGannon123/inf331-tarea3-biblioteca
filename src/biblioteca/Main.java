@@ -1,5 +1,6 @@
 package biblioteca;
 
+
 public class Main {
 	
 	public static void main(String[] args) {
@@ -9,8 +10,8 @@ public class Main {
 		System.out.println("=====================================");
 		System.out.println("Sistema de registro de libros v1.0.0");
 		System.out.println("=====================================");
-
-		Registro registros = new Registro("C:\\Users\\snkk\\Documents\\registros.csv");		
+		
+		Registro registros = new Registro();		
 		
 		while(seleccion != 0) {
 			System.out.println("Seleccione una operación:");
