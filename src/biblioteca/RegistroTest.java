@@ -8,7 +8,7 @@ import java.io.InputStream;
 import org.junit.Before;
 import org.junit.Test;
 
-public class RegistroTest {
+public class RegistroTest{
 	
 	Registro registros;
 		
