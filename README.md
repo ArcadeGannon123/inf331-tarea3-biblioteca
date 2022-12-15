@@ -21,3 +21,5 @@ java -cp junit-4.13.2.jar;hamcrest-core-1.3.jar;. org.junit.runner.JUnitCore  bi
 ```
 Asegurece de que existan los archivos **junit-4.13.2.jar** y **hamcrest-core-1.3.jar**  dentro de la carpeta */src*.
 Covertura de pruebas del 91%, consulte el archivo ECLEmma.html para más detalles.
+## Como usar el programa.
+El programa funciona a través de de la linea de comandos, debe ingresar un número para seleccionar una opción o ingresar un texto según corresponda el caso.
